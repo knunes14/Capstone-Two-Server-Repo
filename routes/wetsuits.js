@@ -8,19 +8,12 @@ router.post('/recommend-wetsuits', async (req, res) => {
     const { categories, height, weight, style, material } = req.body;
 
     const query = {
-        categories: req.body.categories,
-        height: { $gte: Number(req.body.height) },
-        weight: { $gte: Number(req.body.weight) },
-        style: req.body.style,
-        material: { $regex: new RegExp('^' + req.body.material + '$', 'i') }  // Case-insensitive matching
-      };
-    // const query = {
-    //     categories: categories.toLowerCase(),
-    //     height: { $gte: height - 15, $lte: height + 15 },
-    //     weight: { $gte: weight - 20, $lte: weight + 20 },
-    //     style: style,
-    //     material: material
-    // };
+        categories: categories.toLowerCase(),
+        height: { $gte: height - 15, $lte: height + 15 },
+        weight: { $gte: weight - 20, $lte: weight + 20 },
+        style: style,
+        material: material
+    };
     console.log("Querying with:", query);
 
     try {
