@@ -1,69 +1,3 @@
-// const mongoose = require("mongoose");
-
-// const SizeRangeSchema = new mongoose.Schema({
-//     size: { type: String, required: true },
-//     heightRange: {
-//         min: { type: Number, required: true },
-//         max: { type: Number, required: true }
-//     },
-//     weightRange: {
-//         min: { type: Number, required: true },
-//         max: { type: Number, required: true } 
-//     }
-// });
-
-// const StyleMaterialSchema = new mongoose.Schema({
-//     style: { type: String, required: true },
-//     material: { type: String, required: true },
-//     sizeRanges: [SizeRangeSchema]
-// });
-
-// const CategorySchema = new mongoose.Schema({
-//     category: { type: String, required: true, enum: ['Men', 'Women'] },
-//     stylesMaterials: [StyleMaterialSchema]
-// });
-
-
-// const ProductSchema = new mongoose.Schema(
-//     {
-//         title: {
-//             type: String,
-//             required: true,
-//             unique: true
-//         },
-//         description: {
-//             type: String,
-//             required: true
-//         },
-//         img: {
-//             type: String,
-//             required: true
-//         },
-//         categories: [CategorySchema],
-//         sizes: [SizeRangeSchema],  // Embed size ranges within each product
-//         style: {
-//             type: String,
-//             enum: ['Fullsuit', 'Springsuit', 'Shortsleevefull', 'Longsleevespring']
-//         },
-//         material: [StyleMaterialSchema],
-//         price: {
-//             type: Number,
-//             required: true
-//         },
-//         inStock: {
-//             type: Boolean,
-//             default: true
-//         },
-//     },
-//     { timestamps: true }
-// );
-
-// module.exports = mongoose.model("Product", ProductSchema);
-
-
-
-
-
 const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema(
@@ -135,3 +69,66 @@ const ProductSchema = new mongoose.Schema(
 
 
 module.exports = mongoose.model("Product", ProductSchema);
+
+
+// const mongoose = require("mongoose");
+
+// const SizeRangeSchema = new mongoose.Schema({
+//     size: { type: String, required: true },
+//     heightRange: {
+//         min: { type: Number, required: true },
+//         max: { type: Number, required: true }
+//     },
+//     weightRange: {
+//         min: { type: Number, required: true },
+//         max: { type: Number, required: true } 
+//     }
+// });
+
+// const StyleMaterialSchema = new mongoose.Schema({
+//     style: { type: String, required: true },
+//     material: { type: String, required: true },
+//     sizeRanges: [SizeRangeSchema]
+// });
+
+// const CategorySchema = new mongoose.Schema({
+//     category: { type: String, required: true, enum: ['Men', 'Women'] },
+//     stylesMaterials: [StyleMaterialSchema]
+// });
+
+
+// const ProductSchema = new mongoose.Schema(
+//     {
+//         title: {
+//             type: String,
+//             required: true,
+//             unique: true
+//         },
+//         description: {
+//             type: String,
+//             required: true
+//         },
+//         img: {
+//             type: String,
+//             required: true
+//         },
+//         categories: [CategorySchema],
+//         sizes: [SizeRangeSchema],  // Embed size ranges within each product
+//         style: {
+//             type: String,
+//             enum: ['Fullsuit', 'Springsuit', 'Shortsleevefull', 'Longsleevespring']
+//         },
+//         material: [StyleMaterialSchema],
+//         price: {
+//             type: Number,
+//             required: true
+//         },
+//         inStock: {
+//             type: Boolean,
+//             default: true
+//         },
+//     },
+//     { timestamps: true }
+// );
+
+// module.exports = mongoose.model("Product", ProductSchema);
